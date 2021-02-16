@@ -1,0 +1,52 @@
+﻿<html ng-app="mainModule">
+@{
+    ViewBag.Title = "Index";
+}
+<head title="">
+    <style type="text/css">
+
+        #tblContainer, #tblcollections, #tblCRUD, td {
+            border: double;
+        }
+
+        th {
+            background-color: darkgray;
+        }
+
+        #dvcollection {
+            height: 500px;
+            overflow-y: scroll;
+        }
+    </style>
+
+</head>
+<h2>Using Angular for Performing CRUD Operations</h2>
+<body ng-app="mainModule" ng-controller="mycontroller">
+    <table>
+        <thead>
+            <tr class="text-info">
+                <th width="10">Id</th>
+                <th width="10">Name</th>
+                <th width="10">Salary</th>
+                <th width="10">Department</th>
+                <th width="10">DeptId</th>
+            </tr>
+        </thead>
+    <tbody>
+        <tr ng-repeat="x in employees">
+            <td>{{}}</td>
+            <td>{{x.EmpId}}</td>
+            <td>{{x.EmpName}}</td>
+            <td>{{x.Salary}}</td>
+            <td>{{x.DeptName}}</td>
+            <td>{{x.Designation}}</td>
+        </tr>
+
+    </tbody>
+
+    </table>
+</body>
+</html>
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular-route.js"></script>
+<script src="~/Scripts/LatestScripts/Scripts.js"></script>

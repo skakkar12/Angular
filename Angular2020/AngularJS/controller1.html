@@ -1,0 +1,25 @@
+﻿<html>
+<head>
+    <title>Angular JS Controller</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
+    </script>
+</head>
+
+<body ng-app="myAPP">
+    <div ng-controller="myContoller">
+        {{message}}
+
+    </div>
+
+    <script>
+        var ngapp = angular.module("myAPP", []);
+        ngapp.controller("myContoller", function ($scope) {
+            $scope.message = "Hello workd"
+        })
+
+
+
+    </script>
+
+</body>
+</html>

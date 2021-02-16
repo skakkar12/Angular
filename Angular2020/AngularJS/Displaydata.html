@@ -1,0 +1,53 @@
+﻿<html>
+<head>
+    <title>Angular JS Filters</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
+    </script>
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="mycontroller">
+        <ul>
+            <li ng-repeat="x in names | orderBy:'name'">
+
+                {{x.name +", "+x.country}}
+            </li>
+
+        </ul>
+
+        <table border="1" width='100%'>
+            <tr>
+                <th ng-click="orderByMe('name')">Name</th>
+                <th ng-click="orderByMe('country')">Country</th>
+            </tr>
+
+            <tr ng-repeat="x in names | orderBy:myOrderBy">
+                <td>{{x.name}}</td>
+                <td>{{x.country}}</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <script>
+
+
+        var app = angular.module("myApp", []);
+
+        app.controller("mycontroller", function ($scope) {
+            $scope.names = [
+                { name: 'Jani', country: 'Norway' },
+                { name: 'Hege', country: 'Sweden' },
+                { name: 'Kai', country: 'Denmark' }]
+        });
+
+        $scope.orderByMe = function (x) {
+            $scope.myOrderBy = x;
+        }
+
+    </script>
+
+
+</body>
+</html>

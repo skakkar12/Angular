@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+    <script type="text/javascript">
+
+        var mainapp = angular.module("mainapp", []);
+
+        mainapp.controller("studentController", function ($scope) {
+            $scope.student = {
+                fistname: "Mahesh",
+                lastname: "Prashar",
+                fees: 400,
+
+                subject: [
+                    {name:'physics', marks:70},
+                    { name: 'chemistry', marks: 80 },
+                    { name: 'science', marks: 90 }
+                ],
+
+                fullname: function () {
+                    var studentObject;
+                    studentObject = $scope.student;
+                    return studentObject.fistname + " " + studentObject.lastname;
+                }
+            }
+        });
+
+    </script>
+</head>
+<body>
+        <h2>SAMPLEAPPLICATION</h2>
+
+        <div ng-app="mainapp" ng-controller="studentController" >
+            <table>
+
+            </table>
+
+
+
+
+        </div>
+</body>
+</html>

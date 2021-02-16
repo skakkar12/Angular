@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
+    </script>
+</head>
+<body>
+
+    <h1>Application</h1>
+
+    <div ng-app="" ng-init="quantity=1;cost=30;student={firstname:'suman', lastname:'kakkar',rollno:40}; marks=[40,50,60,70]">
+        <p>Hello {{student.firstname+" "+student.lastname}}</p>
+        <p>Expense on books {{cost*quantity}}</p>
+        <p>Roll No {{student.rollno}}</p>
+        <p>Marks {{marks[3]}}</p>
+
+
+    </div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿<html>
+<head>
+    <title>Angular JS Controller</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
+    </script>
+</head>
+
+<body ng-app="myngapp">
+    <div ng-controller="mycontroller">
+        Enter message : <input type="text" name="name" ng-model="message" />
+        <br />
+
+        Enter first : <input type="text" name="fname" ng-model="fname" />
+
+        <br />
+        Enter second : <input type="text" name="lname" ng-model="lname" />
+
+       
+
+        <br />
+        You are entering: {{fullname();}}
+    </div>
+
+
+
+    <script>
+        var ngapp = angular.module("myngapp", [])
+
+        ngapp.controller("mycontroller", function ($scope) {
+            $scope.message = "Hello world!";
+
+            $scope.fname = "Suman";
+            $scope.lname = "Kakkar";
+
+            $scope.fullname = function () {
+                return $scope.fname + " " + $scope.lname;
+            }
+            $scope.showMsg = function (msg) {
+                alert(msg);
+            }
+        });
+    </script>
+</body>
+</html>
